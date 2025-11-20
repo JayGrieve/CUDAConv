@@ -1,7 +1,7 @@
 # CUDAConv
 Highly-parallelized convolution on CPU+GPU Systems
 
-Components
+## Components
 
 - [x] Load images in parallel
         - [ ] For later: Stress test how many we can load at once, determine batch
