@@ -8,6 +8,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fopenmp -Wall")
 # include directories
 ## internal
 include_directories(image_loader)
+include_directories(conv)
 ## external
 include_directories(${CMAKE_SOURCE_DIR}/external/argparse)
 
@@ -18,6 +19,7 @@ find_package(OpenMP REQUIRED)
 add_executable(main
     main.cpp
     image_loader/image_loader.cpp
+    conv/conv.cpp
 )
 
 target_link_libraries(main
