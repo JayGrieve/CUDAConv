@@ -30,6 +30,6 @@ std::vector<cv::Mat> image_loader(const std::string& directory) {
         }
     }
 
-    std::cout << "All images loaded with OpenMP." << std::endl;
+    std::cout << std::endl;
     return loadedImages;
 }

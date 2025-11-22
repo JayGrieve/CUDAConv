@@ -5,6 +5,7 @@
 #include <iostream>
 #include <string>
 #include <filesystem>
+#include <chrono>
 
 namespace fs = std::filesystem;
 
@@ -21,6 +22,8 @@ int main(int argc, char* argv[]) {
         std::cerr << program;
         return 1;
     }
+
+    auto start = std::chrono::high_resolution_clock::now();
 
     // load images from directory
     std::string inputDir = program.get<std::string>("--input_dir");
@@ -48,9 +51,12 @@ int main(int argc, char* argv[]) {
         std::string outName = outputDir + "/conv_" + std::to_string(idx) + ".png";
         cv::imwrite(outName, result);
     
-        std::cout << "Saved: " << outName << "\n";
+        std::cout << "Saved: " << outName << std::endl;
     }
+    std::cout << std::endl;
 
-    std::cout << "All done.\n";
+    auto stop = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> duration = stop - start;
+    std::cout << "Program ran for: " << duration.count() << " seconds." << std::endl;
     return 0;
 }
