@@ -5,5 +5,5 @@ make -j8
 ```
 
 ```bash
-./image_loader
+./main --dir ../images
 ```
