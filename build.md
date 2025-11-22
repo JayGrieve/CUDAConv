@@ -5,5 +5,5 @@ make -j8
 ```
 
 ```bash
-./main --dir ../images
+./main --input_dir ../images --output_dir ../output
 ```
